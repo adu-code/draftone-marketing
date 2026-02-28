@@ -27,10 +27,6 @@ npm run build
 npm run preview
 ```
 
-## Design
-
-See [docs/plans/2026-02-28-marketing-website-design.md](docs/plans/2026-02-28-marketing-website-design.md) for complete design specification.
-
 ## Deployment
 
 Deployed automatically to Vercel on push to `main` branch.
