@@ -7,7 +7,7 @@
 ---
 
 <section class="hero">
-  <div class="container-text">
+  <div class="container-text hero-content">
     <h1>The story you carry deserves to be written</h1>
     <p class="subheadline">
       DraftOne is an AI writing coach that helps first-time authors write their memoir by building their craft—not by writing it for them.
@@ -19,21 +19,34 @@
 <style>
   .hero {
     background-color: var(--bg-primary);
-    padding: var(--space-12) var(--space-4);
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
     text-align: center;
+  }
+
+  .hero-content {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
   }
 
   /* Desktop spacing - more generous vertical padding */
   @media (min-width: 768px) {
     .hero {
-      padding: var(--space-20) var(--space-6);
+      padding-top: var(--space-20);
+      padding-bottom: var(--space-20);
+    }
+
+    .hero-content {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
     }
   }
 
   /* Extra-large desktop - even more breathing room */
   @media (min-width: 1024px) {
     .hero {
-      padding: 12.5rem var(--space-6); /* 200px top/bottom */
+      padding-top: 12.5rem; /* 200px top */
+      padding-bottom: 12.5rem; /* 200px bottom */
     }
   }
 
