@@ -1,0 +1,118 @@
+---
+/**
+ * Base Layout Component
+ * Wraps all pages with common HTML structure, meta tags, fonts, and footer
+ */
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Character encoding and viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Google Fonts - Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts - Crimson Pro (serif) and Inter (sans) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2026 DraftOne. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/privacy">Privacy Policy</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  /* Footer Styles */
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: var(--space-6) var(--space-4);
+    margin-top: var(--space-12);
+  }
+
+  .footer-content {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-content p {
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  .footer-nav a {
+    font-size: var(--text-sm);
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-nav a:hover {
+    color: var(--accent-primary-hover);
+    text-decoration: underline;
+  }
+
+  .footer-nav a:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (min-width: 768px) {
+    footer {
+      padding: var(--space-8) var(--space-6);
+    }
+  }
+</style>
