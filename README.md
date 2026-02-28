@@ -29,7 +29,7 @@ npm run preview
 
 ## Design
 
-See [docs/plans/2026-02-28-marketing-website-design.md](../docs/plans/2026-02-28-marketing-website-design.md) for complete design specification.
+See [docs/plans/2026-02-28-marketing-website-design.md](docs/plans/2026-02-28-marketing-website-design.md) for complete design specification.
 
 ## Deployment
 
