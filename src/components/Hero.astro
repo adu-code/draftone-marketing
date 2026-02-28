@@ -1,0 +1,69 @@
+---
+/**
+ * Hero Component
+ * First section of the landing page - emotionally resonant headline + CTA
+ * Philosophy: Warm, patient, literary - speaks to "The Story Holder" who doubts their writing ability
+ */
+---
+
+<section class="hero">
+  <div class="container-text">
+    <h1>The story you carry deserves to be written</h1>
+    <p class="subheadline">
+      DraftOne is an AI writing coach that helps first-time authors write their memoir by building their craft—not by writing it for them.
+    </p>
+    <a href="#waitlist" class="btn btn-primary btn-lg">Join Waitlist</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background-color: var(--bg-primary);
+    padding: var(--space-12) var(--space-4);
+    text-align: center;
+  }
+
+  /* Desktop spacing - more generous vertical padding */
+  @media (min-width: 768px) {
+    .hero {
+      padding: var(--space-20) var(--space-6);
+    }
+  }
+
+  /* Extra-large desktop - even more breathing room */
+  @media (min-width: 1024px) {
+    .hero {
+      padding: 12.5rem var(--space-6); /* 200px top/bottom */
+    }
+  }
+
+  .hero h1 {
+    margin-bottom: 0; /* Override default h1 margin */
+  }
+
+  .subheadline {
+    margin-top: var(--space-3); /* 24px gap from headline */
+    margin-bottom: var(--space-4); /* 32px gap to button */
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    opacity: 0.9; /* Slightly muted for visual hierarchy */
+  }
+
+  /* Ensure button doesn't inherit paragraph styles */
+  .hero .btn {
+    margin-top: var(--space-4); /* Extra space before CTA */
+  }
+
+  /* Mobile: smaller gaps for tighter layout */
+  @media (max-width: 767px) {
+    .subheadline {
+      margin-top: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+
+    .hero .btn {
+      margin-top: var(--space-3);
+    }
+  }
+</style>
