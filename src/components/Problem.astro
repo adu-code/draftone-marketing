@@ -1,0 +1,94 @@
+---
+/**
+ * Problem Component
+ * Acknowledges the fears that keep first-time memoir authors from writing
+ * Philosophy: Compassionate validation - "That's me" identification without judgment
+ * Shows specific fears (not generic), letting them resonate naturally
+ */
+---
+
+<section class="problem">
+  <div class="container-text problem-content">
+    <h2>Why haven't you written it yet?</h2>
+    <div class="fears">
+      <p class="fear">"I'm not a writer"</p>
+      <p class="fear">"Where do I start?"</p>
+      <p class="fear">"What if it's not good enough?"</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem {
+    background-color: var(--bg-primary);
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+    text-align: center;
+  }
+
+  .problem-content {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Desktop spacing - more generous vertical padding */
+  @media (min-width: 768px) {
+    .problem {
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-16);
+    }
+
+    .problem-content {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+
+  /* Extra-large desktop - even more breathing room */
+  @media (min-width: 1024px) {
+    .problem {
+      padding-top: 9.375rem; /* 150px */
+      padding-bottom: 9.375rem; /* 150px */
+    }
+  }
+
+  .problem h2 {
+    margin-bottom: 0; /* Override default h2 margin */
+  }
+
+  .fears {
+    margin-top: var(--space-5); /* 40px gap from headline */
+  }
+
+  .fear {
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    font-style: italic;
+    opacity: 0.85;
+    margin-bottom: var(--space-3); /* 24px gap between fears */
+    max-width: none; /* Override default paragraph max-width */
+  }
+
+  .fear:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Desktop: larger fear text */
+  @media (min-width: 768px) {
+    .fear {
+      font-size: var(--text-2xl);
+    }
+  }
+
+  /* Mobile: tighter spacing */
+  @media (max-width: 767px) {
+    .fears {
+      margin-top: var(--space-4);
+    }
+
+    .fear {
+      margin-bottom: var(--space-2);
+    }
+  }
+</style>
