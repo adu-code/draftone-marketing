@@ -1,0 +1,184 @@
+---
+/**
+ * Difference Component
+ * Differentiates DraftOne from AI writing tools
+ * Philosophy: Clear positioning without negativity - emphasizes writer empowerment
+ * Message: DraftOne builds your skill, doesn't replace it
+ */
+---
+
+<section class="difference" aria-labelledby="difference-heading">
+  <div class="container-text difference-content">
+    <h2 id="difference-heading">A coach, not a ghostwriter</h2>
+
+    <div class="comparison">
+      <div class="comparison-item">
+        <p class="label">AI writing tools</p>
+        <p class="arrow" aria-hidden="true">→</p>
+        <p class="value">Replace your skill</p>
+      </div>
+
+      <div class="comparison-item">
+        <p class="label">DraftOne</p>
+        <p class="arrow" aria-hidden="true">→</p>
+        <p class="value">Builds your skill</p>
+      </div>
+    </div>
+
+    <p class="principle">Every word is yours</p>
+  </div>
+</section>
+
+<style>
+  .difference {
+    background-color: var(--bg-elevated);
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+    text-align: center;
+  }
+
+  .difference-content {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Desktop spacing - more generous vertical padding */
+  @media (min-width: 768px) {
+    .difference {
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-16);
+    }
+
+    .difference-content {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+
+  /* Extra-large desktop - even more breathing room */
+  @media (min-width: 1024px) {
+    .difference {
+      padding-top: 9.375rem;    /* 150px - Consistent with Problem section spacing */
+      padding-bottom: 9.375rem; /* 150px - Consistent with Problem section spacing */
+    }
+  }
+
+  .difference h2 {
+    margin-bottom: 0; /* Override default h2 margin */
+  }
+
+  /* Comparison container */
+  .comparison {
+    margin-top: var(--space-5); /* 40px gap from headline */
+    margin-bottom: var(--space-5); /* 40px gap to principle */
+  }
+
+  /* Individual comparison item */
+  .comparison-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3); /* 24px gap between label, arrow, value */
+    margin-bottom: var(--space-4); /* 32px gap between comparison items */
+  }
+
+  .comparison-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Labels: "AI writing tools" and "DraftOne" */
+  .label {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-primary);
+    opacity: 0.7;
+    margin-bottom: 0;
+    max-width: none; /* Override default paragraph max-width */
+    min-width: 140px; /* Keep labels aligned */
+    text-align: right;
+  }
+
+  /* Arrow between label and value */
+  .arrow {
+    font-size: var(--text-xl);
+    color: var(--accent-primary);
+    margin-bottom: 0;
+    max-width: none; /* Override default paragraph max-width */
+    flex-shrink: 0;
+  }
+
+  /* Values: "Replace your skill" and "Builds your skill" */
+  .value {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0;
+    max-width: none; /* Override default paragraph max-width */
+    min-width: 160px; /* Keep values aligned */
+    text-align: left;
+  }
+
+  /* Key principle statement */
+  .principle {
+    font-size: var(--text-xl);
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 0;
+    max-width: none; /* Override default paragraph max-width */
+  }
+
+  /* Desktop: larger text sizes */
+  @media (min-width: 768px) {
+    .label {
+      font-size: var(--text-lg);
+      min-width: 180px;
+    }
+
+    .arrow {
+      font-size: var(--text-2xl);
+    }
+
+    .value {
+      font-size: var(--text-xl);
+      min-width: 200px;
+    }
+
+    .principle {
+      font-size: var(--text-2xl);
+    }
+  }
+
+  /* Mobile: tighter spacing and stacked layout */
+  @media (max-width: 767px) {
+    .comparison {
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .comparison-item {
+      flex-direction: column;
+      gap: var(--space-2); /* Tighter gap for vertical stack */
+      margin-bottom: var(--space-5); /* More space between stacked items */
+    }
+
+    .label {
+      min-width: auto;
+      text-align: center;
+    }
+
+    .arrow {
+      transform: rotate(90deg); /* Point downward on mobile */
+    }
+
+    .value {
+      min-width: auto;
+      text-align: center;
+    }
+  }
+
+  /* Highlight the DraftOne comparison item with subtle emphasis */
+  .comparison-item:last-child .value {
+    color: var(--accent-primary);
+  }
+</style>
