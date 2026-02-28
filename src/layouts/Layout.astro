@@ -3,12 +3,21 @@
  * Base Layout Component
  * Wraps all pages with common HTML structure, meta tags, fonts, and footer
  */
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description: string;
+  image?: string;
+  url?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  image = '/og-image.jpg',
+  url = Astro.url.pathname
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -27,15 +36,23 @@ const { title, description } = Astro.props;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="DraftOne" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:url" content={url} />
+    <meta name="twitter:image" content={image} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Google Fonts - Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,9 +63,6 @@ const { title, description } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body>
     <main id="main-content">
