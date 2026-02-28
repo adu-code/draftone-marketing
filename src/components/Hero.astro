@@ -6,9 +6,9 @@
  */
 ---
 
-<section class="hero">
+<section class="hero" aria-labelledby="hero-heading">
   <div class="container-text hero-content">
-    <h1>The story you carry deserves to be written</h1>
+    <h1 id="hero-heading">The story you carry deserves to be written</h1>
     <p class="subheadline">
       DraftOne is an AI writing coach that helps first-time authors write their memoir by building their craft—not by writing it for them.
     </p>
@@ -45,8 +45,8 @@
   /* Extra-large desktop - even more breathing room */
   @media (min-width: 1024px) {
     .hero {
-      padding-top: 12.5rem; /* 200px top */
-      padding-bottom: 12.5rem; /* 200px bottom */
+      padding-top: 12.5rem;    /* 200px - Larger than --space-20 (160px), intentional for this section */
+      padding-bottom: 12.5rem; /* 200px - Larger than --space-20 (160px), intentional for this section */
     }
   }
 
@@ -61,6 +61,7 @@
     line-height: var(--leading-relaxed);
     color: var(--text-primary);
     opacity: 0.9; /* Slightly muted for visual hierarchy */
+    max-width: none; /* Override global paragraph max-width for full-width text */
   }
 
   /* Ensure button doesn't inherit paragraph styles */

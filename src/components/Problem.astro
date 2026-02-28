@@ -7,9 +7,9 @@
  */
 ---
 
-<section class="problem">
+<section class="problem" aria-labelledby="problem-heading">
   <div class="container-text problem-content">
-    <h2>Why haven't you written it yet?</h2>
+    <h2 id="problem-heading">Why haven't you written it yet?</h2>
     <div class="fears">
       <p class="fear">"I'm not a writer"</p>
       <p class="fear">"Where do I start?"</p>
@@ -47,8 +47,8 @@
   /* Extra-large desktop - even more breathing room */
   @media (min-width: 1024px) {
     .problem {
-      padding-top: 9.375rem; /* 150px */
-      padding-bottom: 9.375rem; /* 150px */
+      padding-top: 9.375rem;    /* 150px - Larger than --space-20 (160px), intentional for this section */
+      padding-bottom: 9.375rem; /* 150px - Larger than --space-20 (160px), intentional for this section */
     }
   }
 
