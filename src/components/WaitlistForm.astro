@@ -1,0 +1,266 @@
+---
+/**
+ * WaitlistForm Component
+ * Mailchimp-powered email signup form with custom DraftOne styling
+ * Philosophy: Warm, inviting, accessible - collecting early interest with respect
+ * Integrates with Mailchimp via embedded form POST (no AJAX in Phase 1)
+ */
+---
+
+<section class="waitlist-form" id="waitlist" aria-labelledby="waitlist-heading">
+  <div class="container-text waitlist-content">
+    <h2 id="waitlist-heading">Join the Waitlist</h2>
+    <p class="description">Be the first to know when DraftOne launches. No spam, just updates from real humans building this with you in mind.</p>
+
+    <form
+      action="https://draftone-ai.us2.list-manage.com/subscribe/post?u=2d8aa376953c3248142caf221&id=1832abcfd8"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      class="validate mailchimp-form"
+      target="_blank"
+      novalidate
+    >
+      <div class="form-fields">
+        <div class="field">
+          <label for="mce-FNAME">First Name</label>
+          <input
+            type="text"
+            name="FNAME"
+            id="mce-FNAME"
+            placeholder="Jane"
+            class="form-input"
+          >
+        </div>
+
+        <div class="field">
+          <label for="mce-EMAIL">
+            Email Address <span class="required" aria-label="required">*</span>
+          </label>
+          <input
+            type="email"
+            name="EMAIL"
+            id="mce-EMAIL"
+            required
+            placeholder="jane@example.com"
+            class="form-input"
+            aria-required="true"
+          >
+        </div>
+      </div>
+
+      <!-- Bot prevention field (required by Mailchimp) -->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" name="b_2d8aa376953c3248142caf221_1832abcfd8" tabindex="-1" value="">
+      </div>
+
+      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-lg">
+        Join Waitlist
+      </button>
+
+      <p class="privacy-note">
+        We respect your privacy. Unsubscribe anytime.
+      </p>
+    </form>
+  </div>
+</section>
+
+<style>
+  /* Section: elevated background, comfortable vertical padding */
+  .waitlist-form {
+    background-color: var(--bg-elevated);
+    padding-top: 6.25rem; /* 100px - mobile */
+    padding-bottom: 6.25rem;
+    text-align: center;
+  }
+
+  /* Content wrapper: narrower than standard text container for form focus */
+  .waitlist-content {
+    max-width: 600px;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Desktop spacing */
+  @media (min-width: 768px) {
+    .waitlist-form {
+      padding-top: 9.375rem; /* 150px - tablet/desktop */
+      padding-bottom: 9.375rem;
+    }
+
+    .waitlist-content {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+
+  /* Headline: standard h2 size, centered */
+  .waitlist-form h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+    text-align: center;
+  }
+
+  /* Description: body text with warmth */
+  .description {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    margin-bottom: var(--space-6); /* 48px to form */
+    max-width: none; /* Override global paragraph max-width */
+    opacity: 0.9;
+  }
+
+  @media (min-width: 768px) {
+    .description {
+      font-size: var(--text-lg);
+    }
+  }
+
+  /* Form container */
+  .mailchimp-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Form fields wrapper */
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4); /* 32px gap between fields */
+    width: 100%;
+    margin-bottom: var(--space-5); /* 40px to button */
+  }
+
+  /* Stack horizontally on tablet+ */
+  @media (min-width: 768px) {
+    .form-fields {
+      flex-direction: row;
+      gap: var(--space-3); /* 24px gap between fields */
+    }
+  }
+
+  /* Individual field wrapper */
+  .field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+  }
+
+  /* Field labels */
+  label {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1); /* 8px to input */
+    display: block;
+  }
+
+  .required {
+    color: var(--accent-primary);
+    font-weight: 600;
+  }
+
+  /* Input fields */
+  .form-input {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4); /* 24px vertical, 32px horizontal */
+    width: 100%;
+    min-height: 44px; /* Touch target minimum (WCAG 2.1) */
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  /* Placeholder styling */
+  .form-input::placeholder {
+    color: var(--text-primary);
+    opacity: 0.5;
+  }
+
+  /* Focus state */
+  .form-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(164, 77, 46, 0.1); /* Terracotta glow */
+  }
+
+  /* Hover state */
+  .form-input:hover {
+    border-color: var(--accent-primary);
+  }
+
+  /* Invalid state (after user interaction) */
+  .form-input:invalid:not(:placeholder-shown) {
+    border-color: var(--accent-primary);
+  }
+
+  /* Button alignment */
+  .mailchimp-form .btn {
+    width: 100%;
+    margin-bottom: var(--space-3); /* 24px to privacy note */
+  }
+
+  @media (min-width: 768px) {
+    .mailchimp-form .btn {
+      width: auto;
+      min-width: 200px;
+    }
+  }
+
+  /* Privacy note below button */
+  .privacy-note {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    color: var(--text-primary);
+    opacity: 0.7;
+    margin: 0;
+    max-width: none;
+  }
+
+  /* Subtle top border for visual separation */
+  .waitlist-form::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: var(--border-subtle);
+    margin: 0 auto;
+    position: relative;
+    top: -3.125rem; /* Half of mobile vertical padding */
+  }
+
+  @media (min-width: 768px) {
+    .waitlist-form::before {
+      top: -4.6875rem; /* Half of tablet/desktop vertical padding */
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .form-input {
+      transition: none;
+    }
+  }
+
+  /* High contrast mode adjustments */
+  @media (prefers-contrast: high) {
+    .form-input {
+      border-width: 2px;
+    }
+
+    .form-input:focus {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
+    }
+  }
+</style>
