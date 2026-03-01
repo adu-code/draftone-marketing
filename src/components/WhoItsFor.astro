@@ -1,0 +1,104 @@
+---
+/**
+ * WhoItsFor Component
+ * Speaks directly to "The Story Holder" - validates their experience and story's worth
+ * Creates emotional identification through specific story types and direct address
+ * Philosophy: Warm minimalism - no persona labels, just human truth
+ */
+---
+
+<section class="who-its-for" aria-labelledby="whoitsfor-heading">
+  <div class="container-text whoitsfor-content">
+    <h2 id="whoitsfor-heading">You've lived through something worth writing about</h2>
+    <div class="content">
+      <p>
+        An immigration journey. A difficult childhood. A loss that changed everything.
+        A career that put you at the center of history. A caregiving experience.
+        A second act after failure or reinvention.
+      </p>
+      <p>
+        You've told the story at dinner tables, to your children, in therapy.
+        But you've never written it down—and <em class="gentle-emphasis">time is passing</em>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .who-its-for {
+    background-color: var(--bg-elevated);
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+    text-align: center;
+  }
+
+  .whoitsfor-content {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Desktop spacing - more generous vertical padding */
+  @media (min-width: 768px) {
+    .who-its-for {
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-16);
+    }
+
+    .whoitsfor-content {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+
+  /* Extra-large desktop - consistent with other sections */
+  @media (min-width: 1024px) {
+    .who-its-for {
+      padding-top: 9.375rem;    /* 150px */
+      padding-bottom: 9.375rem; /* 150px */
+    }
+  }
+
+  .who-its-for h2 {
+    margin-bottom: 0; /* Override default h2 margin */
+  }
+
+  /* Content wrapper for paragraphs */
+  .content {
+    margin-top: var(--space-5); /* 40px gap from headline */
+  }
+
+  /* Paragraphs: comfortable reading with generous line-height */
+  .who-its-for p {
+    font-size: var(--text-base);
+    line-height: var(--leading-loose); /* 1.75 for warm, unhurried feel */
+    color: var(--text-primary);
+    max-width: none; /* Override default p max-width since container handles it */
+    margin-bottom: 0;
+  }
+
+  /* Space between paragraphs */
+  .content p + p {
+    margin-top: var(--space-3); /* 24px */
+  }
+
+  /* Emphasis on "time is passing" - subtle, not dramatic */
+  .gentle-emphasis {
+    font-style: italic;
+    color: var(--accent-primary);
+    font-weight: 500;
+  }
+
+  /* Desktop: larger comfortable reading size */
+  @media (min-width: 768px) {
+    .who-its-for p {
+      font-size: var(--text-lg); /* 20px */
+    }
+  }
+
+  /* Optional: slightly larger on very large screens for impact */
+  @media (min-width: 1024px) {
+    .who-its-for p {
+      font-size: 1.375rem; /* 22px - between lg and xl */
+    }
+  }
+</style>
