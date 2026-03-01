@@ -8,6 +8,7 @@
 
 <section class="hero" aria-labelledby="hero-heading">
   <div class="container-text hero-content">
+    <img src="/logo.png" alt="DraftOne" class="hero-logo" />
     <h1 id="hero-heading">The story you carry deserves to be written</h1>
     <p class="subheadline">
       DraftOne is an AI writing coach that helps first-time authors write their memoir by building their craft—not by writing it for them.
@@ -47,6 +48,21 @@
     .hero {
       padding-top: 12.5rem;    /* 200px - Larger than --space-20 (160px), intentional for this section */
       padding-bottom: 12.5rem; /* 200px - Larger than --space-20 (160px), intentional for this section */
+    }
+  }
+
+  .hero-logo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto var(--space-8);
+    display: block;
+  }
+
+  @media (max-width: 767px) {
+    .hero-logo {
+      max-width: 280px;
+      margin-bottom: var(--space-6);
     }
   }
 
