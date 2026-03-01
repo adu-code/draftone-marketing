@@ -1,0 +1,21 @@
+{
+  "name": "DraftOne",
+  "short_name": "DraftOne",
+  "description": "AI writing coach for memoir authors",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4EDE6",
+  "theme_color": "#C67C5C",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
