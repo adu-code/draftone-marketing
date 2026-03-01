@@ -1,0 +1,117 @@
+---
+/**
+ * FooterCTA Component
+ * Final waitlist invitation before the site footer
+ * Philosophy: Patient, warm invitation - reinforces core positioning
+ * Larger vertical padding creates emphasis (this is the last ask)
+ */
+---
+
+<section class="footer-cta" aria-labelledby="footercta-heading">
+  <div class="container-text footercta-content">
+    <h2 id="footercta-heading">Your story is waiting</h2>
+    <p class="subheadline">
+      Start writing with a coach who builds your craft—not a tool that replaces it.
+    </p>
+    <a href="#waitlist" class="btn-primary btn-lg">Join Waitlist</a>
+  </div>
+</section>
+
+<style>
+  /* Section: elevated background, larger vertical padding for emphasis */
+  .footer-cta {
+    background-color: var(--bg-elevated);
+    padding-top: 7.5rem; /* 120px - mobile */
+    padding-bottom: 7.5rem;
+    text-align: center;
+  }
+
+  /* Content wrapper: horizontal padding, center alignment */
+  .footercta-content {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Desktop spacing - even more generous for final CTA */
+  @media (min-width: 768px) {
+    .footer-cta {
+      padding-top: 10rem; /* 160px - tablet */
+      padding-bottom: 10rem;
+    }
+
+    .footercta-content {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+
+  /* Extra-large desktop - maximum emphasis */
+  @media (min-width: 1024px) {
+    .footer-cta {
+      padding-top: 11.25rem; /* 180px - desktop */
+      padding-bottom: 11.25rem;
+    }
+  }
+
+  /* Headline: larger than typical h2, center-aligned */
+  .footer-cta h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3); /* 24px to subheadline */
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-cta h2 {
+      font-size: 3.5rem; /* 56px - larger than standard h2 */
+      letter-spacing: -0.015em;
+    }
+  }
+
+  /* Subheadline: body text with subtle emphasis */
+  .subheadline {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4); /* 32px to button */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .subheadline {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-5); /* 40px on larger screens */
+    }
+  }
+
+  /* CTA Button: center-aligned with breathing room */
+  .footer-cta .btn-primary {
+    margin-top: var(--space-4);
+  }
+
+  /* Optional: Subtle top border for visual separation from FAQ */
+  .footer-cta::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: var(--border-subtle);
+    margin: 0 auto;
+    position: relative;
+    top: -3.75rem; /* Half of mobile vertical padding */
+  }
+
+  @media (min-width: 768px) {
+    .footer-cta::before {
+      top: -5rem; /* Half of tablet vertical padding */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-cta::before {
+      top: -5.625rem; /* Half of desktop vertical padding */
+    }
+  }
+</style>
